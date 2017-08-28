@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnnotationsDockWidget</class>
+ <widget class="QDockWidget" name="AnnotationsDockWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>968</width>
+    <height>1051</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Annotations</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTreeWidget" name="AnnotationTreeWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="dragEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::InternalMove</enum>
+      </property>
+      <property name="defaultDropAction">
+       <enum>Qt::CopyAction</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+      <property name="uniformRowHeights">
+       <bool>true</bool>
+      </property>
+      <property name="sortingEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="animated">
+       <bool>true</bool>
+      </property>
+      <property name="allColumnsShowFocus">
+       <bool>true</bool>
+      </property>
+      <property name="headerHidden">
+       <bool>false</bool>
+      </property>
+      <column>
+       <property name="text">
+        <string>Color</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="addGroupButton">
+        <property name="text">
+         <string>Add new group</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="clearButton">
+        <property name="text">
+         <string>Clear</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="loadButton">
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="tryLearningResultButton">
+        <property name="text">
+         <string>Try learning result</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="saveButton">
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0">
+     <widget class="Line" name="currentAnnotationLine">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="currentAnnotationLabel">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="currentAnnotationHeaderLabel">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Current annotation:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QTreeWidget" name="PathologyTreeWidget">
+      <attribute name="headerDefaultSectionSize">
+       <number>230</number>
+      </attribute>
+      <attribute name="headerMinimumSectionSize">
+       <number>10</number>
+      </attribute>
+      <attribute name="headerStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>病变类型</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>勾选</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>疑似病变</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>不确定的病变</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>腺瘤</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>低级别上皮内瘤变</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>高级别上皮内瘤变</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>无上皮内瘤变</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>不确定的上皮内瘤变</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>上皮内瘤变</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>低级别上皮内瘤变</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>高级别上皮内瘤变</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>癌</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>腺癌</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>乳头状腺癌</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>管状腺癌</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>粘液腺癌</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>低粘附性癌</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>混合性腺癌</string>
+         </property>
+        </item>
+       </item>
+       <item>
+        <property name="text">
+         <string>腺鳞癌</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>伴有淋巴样间质的癌（髓样癌）</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>肝样腺癌</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>鳞状细胞癌</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>未分化癌</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>神经内分泌肿瘤</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>神经内分泌瘤NET</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>NET 1级 （类癌）</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>NET 2级</string>
+         </property>
+        </item>
+       </item>
+       <item>
+        <property name="text">
+         <string>神经内分泌癌NEC</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>大细胞 NEC</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>小细胞 NEC</string>
+         </property>
+        </item>
+       </item>
+       <item>
+        <property name="text">
+         <string>混合性腺神经内分泌癌</string>
+        </property>
+       </item>
+      </item>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

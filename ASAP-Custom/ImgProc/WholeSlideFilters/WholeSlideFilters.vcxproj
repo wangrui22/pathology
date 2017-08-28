@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6A9AC623-98D3-4F43-9806-1AC642C2E5E3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>WholeSlideFilters</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Bin\x64</OutDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)_d</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Bin\x86</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Bin\x64</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Bin\x86</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;SWIG_PYTHON_INTERPRETER_NO_DEBUG;wholeslidefilters_EXPORTS;_DEBUG;_WINDOWS;_USRDLL;WHOLESLIDEFILTERS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../include;../../include/Ext;../../include/Ext/pugixml;../../include/Ext/opencv;../../include/Ext/opencv/3rdparty;../../include/Ext/opencv/3rdparty/libtiff;../../include/Ext/opencv/3rdparty/libjasper;../../include/ImgProc/WholeSlideFilters;../../include/ImgProc/NucleiSegmentation;../../include/IO/MultiResolutionImageInterface;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../Lib/x64;../../Lib/x64/Ext/boost;../../Lib/x64/Ext/dcmtk;../../Lib/x64/Ext/mbedtls;../../Lib/x64/Ext/openslide;../../Lib/x64/Ext/pugixml;../../Lib/x64/Ext/opencv;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(SolutionDir)\Lib\x64\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>annotation_d.lib;NucleiSegmentation_d.lib;basicfilters_d.lib;multiresolutionimageinterface_d.lib;core_d.lib;opencv_world310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;SWIG_PYTHON_INTERPRETER_NO_DEBUG;wholeslidefilters_EXPORTS;_DEBUG;_WINDOWS;_USRDLL;WHOLESLIDEFILTERS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../include;../../include/Ext;../../include/Ext/pugixml;../../include/Ext/opencv;../../include/Ext/opencv/3rdparty;../../include/Ext/opencv/3rdparty/libtiff;../../include/Ext/opencv/3rdparty/libjasper;../../include/ImgProc/WholeSlideFilters;../../include/ImgProc/NucleiSegmentation;../../include/IO/MultiResolutionImageInterface;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../Lib/x86;../../Lib/x86/Ext/boost;../../Lib/x86/Ext/dcmtk;../../Lib/x86/Ext/mbedtls;../../Lib/x86/Ext/openslide;../../Lib/x86/Ext/pugixml;../../Lib/x86/Ext/opencv;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(SolutionDir)\Lib\x86\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>annotation_d.lib;NucleiSegmentation_d.lib;basicfilters_d.lib;multiresolutionimageinterface_d.lib;core_d.lib;opencv_world310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;SWIG_PYTHON_INTERPRETER_NO_DEBUG;wholeslidefilters_EXPORTS;NDEBUG;_WINDOWS;_USRDLL;WHOLESLIDEFILTERS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../include;../../include/Ext;../../include/Ext/pugixml;../../include/Ext/opencv;../../include/Ext/opencv/3rdparty;../../include/Ext/opencv/3rdparty/libtiff;../../include/Ext/opencv/3rdparty/libjasper;../../include/ImgProc/WholeSlideFilters;../../include/ImgProc/NucleiSegmentation;../../include/IO/MultiResolutionImageInterface;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../Lib/x64;../../Lib/x64/Ext/boost;../../Lib/x64/Ext/dcmtk;../../Lib/x64/Ext/mbedtls;../../Lib/x64/Ext/openslide;../../Lib/x64/Ext/pugixml;../../Lib/x64/Ext/opencv;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(SolutionDir)\Lib\x64\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>annotation.lib;NucleiSegmentation.lib;basicfilters.lib;multiresolutionimageinterface.lib;core.lib;opencv_world310.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;SWIG_PYTHON_INTERPRETER_NO_DEBUG;wholeslidefilters_EXPORTS;NDEBUG;_WINDOWS;_USRDLL;WHOLESLIDEFILTERS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../include;../../include/Ext;../../include/Ext/pugixml;../../include/Ext/opencv;../../include/Ext/opencv/3rdparty;../../include/Ext/opencv/3rdparty/libtiff;../../include/Ext/opencv/3rdparty/libjasper;../../include/ImgProc/WholeSlideFilters;../../include/ImgProc/NucleiSegmentation;../../include/IO/MultiResolutionImageInterface;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../Lib/x86;../../Lib/x86/Ext/boost;../../Lib/x86/Ext/dcmtk;../../Lib/x86/Ext/mbedtls;../../Lib/x86/Ext/openslide;../../Lib/x86/Ext/pugixml;../../Lib/x86/Ext/opencv;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(SolutionDir)\Lib\x86\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>annotation.lib;NucleiSegmentation.lib;basicfilters.lib;multiresolutionimageinterface.lib;core.lib;opencv_world310.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ArithmeticWholeSlideFilter.cpp" />
+    <ClCompile Include="ConnectedComponentsWholeSlideFilter.cpp" />
+    <ClCompile Include="DistanceTransformWholeSlideFilter.cpp" />
+    <ClCompile Include="LabelStatisticsWholeSlideFilter.cpp" />
+    <ClCompile Include="NucleiDetectionWholeSlideFilter.cpp" />
+    <ClCompile Include="ThresholdWholeSlideFilter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\ImageProc\WholeSlide\ArithmeticWholeSlideFilter.h" />
+    <ClInclude Include="..\..\include\ImageProc\WholeSlide\ConnectedComponentsWholeSlideFilter.h" />
+    <ClInclude Include="..\..\include\ImageProc\WholeSlide\DistanceTransformWholeSlideFilter.h" />
+    <ClInclude Include="..\..\include\ImageProc\WholeSlide\LabelStatisticsWholeSlideFilter.h" />
+    <ClInclude Include="..\..\include\ImageProc\WholeSlide\NucleiDetectionWholeSlideFilter.h" />
+    <ClInclude Include="..\..\include\ImageProc\WholeSlide\ThresholdWholeSlideFilter.h" />
+    <ClInclude Include="..\..\include\ImageProc\WholeSlide\wholeslidefilters_export.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
