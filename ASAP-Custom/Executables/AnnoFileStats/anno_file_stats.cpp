@@ -235,7 +235,7 @@ void init_dic()
     dic["adenosquamous_carcinoma"] = std::string("腺鳞癌");
     dic["medullary_carcinoma"] = std::string("伴有淋巴样间质的癌(髓样癌)");
     dic["hepatoid_adenocarcinoma"] = std::string("肝样腺癌");
-    dic["squamous-cell_carcinom"] = std::string("鳞状细胞癌");
+    dic["squamous-cell_carcinoma"] = std::string("鳞状细胞癌");
     dic["undifferentiated_carcinoma"] = std::string("未分化癌");
     dic["NET1"] = std::string("NET1级（类癌）");
     dic["NET2"] = std::string("NET2级");
